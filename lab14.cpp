@@ -1,3 +1,4 @@
+// COMSC-210 | lab 14 | Kent Kawashima
 #include <iostream>
 using namespace std;
 
@@ -37,7 +38,7 @@ public:
 };
 
 /**************************************
- * Fucntion: Main
+ * Function: Main
  **************************************/
 int main()
 {
