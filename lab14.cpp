@@ -1,29 +1,33 @@
 #include <iostream>
 using namespace std;
 
-//class declaration
+// class declaration
 class Color
 {
 private:
     int r, g, b;
 
 public:
-    int getterR() const { return r; } // inline functions, const to avoid loophole changes
+    // inline functions to get each private value, const to avoid loophole changes
+    int getterR() const { return r; }
     int getterG() const { return g; }
     int getterB() const { return b; }
 
-    void setterR(int value) { r = value; } // setter inline for seperate
+    // setter inline functions for each seperate variable
+    void setterR(int value) { r = value; }
     void setterG(int value) { g = value; }
     void setterB(int value) { b = value; }
 
+    // method to set all variables at once (due to custom constructors not having been introduced yet)
     void setterAll(int red, int green, int blue)
     {
         r = red;
         g = green;
         b = blue;
-    } // setter for each var (due to custom constructors not having been introduced yet)
+    }
 
-    void printAll() const //unsure if const needed here but method acts similarly to getter so included
+    //method to print out all values of specified class, formatted neatly.
+    void printAll() const // unsure if const needed here but method acts similarly to getter fucntions so I included
     {
         cout << "-------------\n"; // formatting
         cout << "red value: " << r << '\n';
@@ -33,11 +37,11 @@ public:
 };
 
 /**************************************
-* Fucntion: Main
-**************************************/
+ * Fucntion: Main
+ **************************************/
 int main()
 {
-    // using individual setters/getters for the first 
+    // using individual setters/getters for the first
     Color color1;
     color1.setterR(100);
     color1.setterB(234);
@@ -46,7 +50,7 @@ int main()
     cout << "green value: " << color1.getterG() << '\n';
     cout << "blue value: " << color1.getterB() << '\n';
 
-    // using methods to speed up assignment/output of each value
+    // using methods to speed up assignment/output of each subsequent object
     Color color2;
     color2.setterAll(232, 111, 40);
     color2.printAll();
